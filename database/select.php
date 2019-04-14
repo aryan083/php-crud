@@ -15,10 +15,7 @@ class select
         $result = $this->conn->query($data);
 
         if ($result->num_rows > 0) {
-            // output data of each row
-            while ($row = $result->fetch_assoc()) {
-                return $row;
-            }
+            return $result;
         } else {
             echo "0 results";
         }
