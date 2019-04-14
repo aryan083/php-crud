@@ -31,6 +31,18 @@ put these at the top ,
 
 `index::select($table);`
 
+### Example :
+
+```bash
+$results = index::select($table);
+
+while ($rows = $results->fetch_assoc()) {
+
+	echo $rows['name'];
+}
+```
+
+
 # For Update : 
 
 `index::update($table, $data, $id);`
