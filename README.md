@@ -21,7 +21,7 @@ put these at the top ,
 
 # For Insert :
 
-`index::insert($table, $data);`
+`DB::insert($table, $data);`
 
 `$table` = its your table name,
 
@@ -29,7 +29,7 @@ put these at the top ,
 
 # For select :
 
-`index::select($table);`
+`DB::select($table);`
 
 ### Example :
 
@@ -45,11 +45,11 @@ while ($rows = $results->fetch_assoc()) {
 
 # For Update : 
 
-`index::update($table, $data, $id);`
+`DB::update($table, $data, $id);`
 
 # For Delete : 
 
-`index::delete($table, $id);`
+`DB::delete($table, $id);`
 
 ---
 

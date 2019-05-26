@@ -2,7 +2,7 @@
 
 include 'db_connection.php';
 
-class index
+class DB
 {
     static function select($table)
     {
