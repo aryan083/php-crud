@@ -34,7 +34,7 @@ put these at the top ,
 ### Example :
 
 ```bash
-$results = index::select($table);
+$results = DB::select($table);
 
 while ($rows = $results->fetch_assoc()) {
 
