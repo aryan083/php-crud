@@ -12,6 +12,7 @@ class dbConnection
     private $user;
     private $pass;
     private $dbname;
+    private $conn;
 
     public function __construct($host, $user, $pass, $dbname)
     {
@@ -19,16 +20,20 @@ class dbConnection
         $this->user = $user;
         $this->pass = $pass;
         $this->dbname = $dbname;
+
+    
+        try {
+            $dsn = "mysql:host=$this->host;dbname=$this->dbname";
+            $this->conn = new PDO($dsn, $this->user, $this->pass);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo "Database Not Connected: " . $e->getMessage();
+        }
     }
 
-    public function connection()
+    public function getConnection()
     {
-        // Create connection
-        $conn = new mysqli($this->host, $this->user, $this->pass, $this->dbname);
-        // Check connection
-        if ($conn->connect_error) {
-            echo "Database Not Connected !!";
-        }
-        return $conn;
+        return $this->conn;
     }
 }
+?>

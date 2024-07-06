@@ -8,3 +8,5 @@ define("DB_NAME", ""); // your database name
 define('insertSuccess', 'Insert Successfully');
 define('updateSuccess', 'Update Successfully');
 define('deleteSuccess', 'Deleted Successfully');
+
+//suggest defining the tables here also as constants to avoid typos
